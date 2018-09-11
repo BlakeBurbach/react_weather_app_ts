@@ -5,6 +5,7 @@ interface ILocationInputFormProps {getWeather: (event: any) => Promise<void>};
 class LocationInputForm extends React.Component<ILocationInputFormProps> {
 
     public render () {
+
         return (
             <form onSubmit={this.props.getWeather}>
                 <input type="text" name="city" placeholder="City..."/>
