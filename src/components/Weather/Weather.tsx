@@ -28,7 +28,7 @@ const empty = "";
 const Weather: React.SFC<IWeatherProps> = props => (
     <div>
         {/* If there are props, render the data
-                if not, render an empty <p> for each value */}
+        if not, render an empty <p> for each value */}
         {props.city && props.country ? <p>Location: {props.city}, {props.country}</p> : <p>{empty}</p>}
         {props.temperature ? <p>Temperature: {TempFahr(props.temperature)}</p> : <p>{empty}</p>}
         {props.humidity ? <p>Humidity: {props.humidity}</p> : <p>{empty}</p>}
