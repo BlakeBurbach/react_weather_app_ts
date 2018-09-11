@@ -10,12 +10,11 @@ const API_KEY = "f91e53300319f33447e5d7ce0316f43a";
 class App extends React.Component {
 
   public state = {
-    city: undefined,
-    country: undefined,
-    description: undefined,
-    error: undefined,
-    humidity: undefined,
-    temperature: undefined,
+    city: '',
+    country: "",
+    description: "",
+    humidity: 0,
+    temperature: 0,
   }
 
   public getWeather = async (event: any) => {
@@ -29,7 +28,6 @@ class App extends React.Component {
       city: data.name,
       country: data.sys.country,
       description: data.weather[0].description,
-      error: "",
       humidity: data.main.humidity,
       temperature: data.main.temp,
     })
@@ -40,7 +38,13 @@ class App extends React.Component {
       <div className="App">
         <Titles />
         <LocationInputForm getWeather={this.getWeather} />
-        <Weather />
+        <Weather 
+          city={this.state.city}
+          country={this.state.country}
+          description={this.state.description}
+          humidity={this.state.humidity}
+          temperature={this.state.temperature}
+        />
       </div>
     );
   }
